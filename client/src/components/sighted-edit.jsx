@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import './sighted-edit.css'
 
 
 const SeenEdit = () => {
@@ -43,6 +44,8 @@ const SeenEdit = () => {
         }
     }
 
+    
+
     return (
         <div>
             <Button variant="primary" onClick={handleShow}>
@@ -54,7 +57,7 @@ const SeenEdit = () => {
                     <Modal.Title>Please provide the details:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
+                    <Form className="formEdit">
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>When did you see them?</Form.Label>
                             <Form.Control

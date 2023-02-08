@@ -15,6 +15,7 @@ import Button from "react-bootstrap/esm/Button";
 import './css/solo-report.css'
 import Card from 'react-bootstrap/Card';
 import SeenEdit from "../components/sighted-edit";
+import FoundEdit from "../components/found-edit";
 
 
 
@@ -114,7 +115,7 @@ const SingleReport = () => {
             </Row>
             <Row>
               <Col><SeenEdit /></Col>
-              <Col><Button>Have you found him/her?</Button></Col>
+              <Col><FoundEdit report={report}/></Col>
             </Row>
           </Col>
           <Col sm={4} className="colRight">

@@ -161,10 +161,10 @@ const Report = () => {
 
                     <Form.Group as={Col} controlId="formGridGender">
                         <Form.Label>Gender</Form.Label>
-                        <Form.Select aria-label="Default select example" value={gender} name="gender"
-                            onChange={handleChange}>
-                            <option value="Female">Female</option>
+                        <Form.Select aria-label="Default select example" value={gender} name="gender" onChange={handleChange}>
+                            <option value="">Select Gender</option>
                             <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                             <option value="Others">Others</option>
                         </Form.Select>
                     </Form.Group>
@@ -243,9 +243,10 @@ const Report = () => {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridMunicipality">
-                        <Form.Label>Street</Form.Label>
+                        <Form.Label>Municipality</Form.Label>
                         <Form.Select aria-label="Default select example" value={municipality} name="municipality"
                             onChange={handleChange}>
+                            <option value="">Select Municipality</option>
                             <option value="Abucay">Abucay</option>
                             <option value="Bagac">Bagac</option>
                             <option value="Balanga">Balanga</option>

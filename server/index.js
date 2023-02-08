@@ -209,12 +209,14 @@ app.put('/reports/:report_id', async (req, res) => {
 // get all sighted reports for sighted page
 app.get('/sighted', async (req, res) => {
     try {
-        const reports = await pool.query('SELECT * FROM reports INNER JOIN status ON reports.typeid = status.statusid INNER JOIN users ON reports.reporterid = users.usersid WHERE typeid = 2 ORDER BY reportsid ASC');
+        const reports = await pool.query('SELECT DISTINCT ON (reportid) * FROM updatesighted INNER JOIN reports ON updatesighted.reportid = reports.reportsid INNER JOIN users ON updatesighted.reporterid = users.usersid');
         res.json(reports.rows);
     } catch (err) {
         console.error(err.message);
     }
 })
+
+
 
 //post an update sighted report click on modal update seen
 app.post('/report-sighted', async (req, res) => {
@@ -223,7 +225,7 @@ app.post('/report-sighted', async (req, res) => {
         const reportsighted = await pool.query(`
         INSERT INTO updatesighted (reportid, timeday, lastwhen, lastwhere, description, reporterid)
         VALUES($1, $2, $3, $4, $5, $6) RETURNING *`,
-        [ reportid, timeday, lastwhen, lastwhere, description, reporterid ]
+            [reportid, timeday, lastwhen, lastwhere, description, reporterid]
         );
         res.json(reportsighted.rows[0]);
     } catch (err) {
@@ -234,10 +236,10 @@ app.post('/report-sighted', async (req, res) => {
 //get for report sighted page updated of a single report
 app.get('/report-sighted/:id', async (req, res) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const reportssighted = await pool.query(`SELECT * FROM updatesighted INNER JOIN users ON updatesighted.reporterid = users.usersid
         INNER JOIN reports ON updatesighted.reportid = reports.reportsid WHERE reportid = $1`, [id])
-        res.json(reports.rows);
+        res.json(reportssighted.rows);
     } catch (err) {
         console.error(err.message);
     }
@@ -253,45 +255,32 @@ app.get('/found', async (req, res) => {
     }
 })
 
-app.put('report-sighted-status/:id', async (req, res) => {
+
+
+//update seenwhen, seenwhere, typeid if the report is found
+app.put('/found/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { typeid } = req.body;
-        const updateSighted = await pool.query('UPDATE reports SET  typeid = 2 WHERE id = $2',
-            [typeid, id]);
-
+        const { seenwhen, seenwhere, typeid, reporterid } = req.body;
+        const updateFound = await pool.query('UPDATE reports SET seenwhen = $1, seenwhere = $2,  typeid = 3, reporterid = $3 WHERE reportsid = $4',
+            [seenwhen, seenwhere, reporterid, id]);
         res.json('updated')
     } catch (err) {
         console.error(err.message);
     }
 })
 
-//post an update when already found
-app.post('/report-found', async (req, res) => {
-    try {
-        const { reportid, timeday, lastwhen, lastwhere, description, reporterid } = req.body;
-        const reportfound = await pool.query(`
-        INSERT INTO updatefound (reportid, timeday, lastwhen, lastwhere, description, reporterid)
-        VALUES($1, $2, $3, $4, $5, $6) RETURNING *`,
-        [ reportid, timeday, lastwhen, lastwhere, description, reporterid ]
-        );
-        res.json(reportfound.rows[0]);
-    } catch (err) {
-        console.error(err.message);
-    }
-})
-
 //get for report sighted page updated of a single report
-app.get('/report-found/:id', async (req, res) => {
-    try {
-        const {id} = req.params;
-        const reportsfound = await pool.query(`SELECT * FROM updatefound INNER JOIN users ON updatefound.reporterid = users.usersid
-        INNER JOIN reports ON updatefound.reportid = reports.reportsid WHERE reportid = $1`, [id])
-        res.json(reportsfound.rows);
-    } catch (err) {
-        console.error(err.message);
-    }
-})
+// app.get('/report-found/:id', async (req, res) => {
+//     try {
+//         const { id } = req.params;
+//         const reportsfound = await pool.query(`SELECT * FROM reports INNER JOIN reports ON reports.reporterid = users.usersid
+//         INNER JOIN reports ON updatefound.reportid = reports.reportsid WHERE reportid = $1`, [id])
+//         res.json(reportsfound.rows);
+//     } catch (err) {
+//         console.error(err.message);
+//     }
+// })
 
 
 //delete a report by admin only 
@@ -320,7 +309,7 @@ app.put('/adminsighted/:id', async (req, res) => {
 })
 
 //IMAGE UPLOADER    
-const storage = multer.diskStorage( {
+const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, '../client/src/Images')
     },
@@ -328,15 +317,15 @@ const storage = multer.diskStorage( {
     filename: (req, file, cb) => {
         console.log(file);
         const uniquePrefix = Date.now()
-        cb(null, uniquePrefix + file.fieldname + '.png' )
+        cb(null, uniquePrefix + file.fieldname + '.png')
     }
-    
+
 })
 
-const upload = multer( { storage: storage })
+const upload = multer({ storage: storage })
 
 app.post('/upload', upload.single('my-image'), async (req, res) => {
-    
+
     const { filename } = req.file
 
     const newPicture = await pool.query(`

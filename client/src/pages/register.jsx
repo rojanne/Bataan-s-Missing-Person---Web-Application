@@ -9,13 +9,13 @@ import NavbarWel from "../components/navbarWel";
 const Register = () => {
     const [inputs, setInputs] = useState({
         first_name: "",
-        last_name:"",
+        last_name: "",
         email: "",
         password: ""
     })
 
     const onChange = e => {    //username     : barney   
-        setInputs({...inputs, [e.target.name] : e.target.value})
+        setInputs({ ...inputs, [e.target.name]: e.target.value })
     }
 
     const { first_name, last_name, email, password } = inputs
@@ -23,7 +23,7 @@ const Register = () => {
     const onSubmitForm = async (e) => {
         e.preventDefault()
         try {
-            const body = {first_name, last_name, email, password}
+            const body = { first_name, last_name, email, password }
 
             const response = await fetch(
                 "http://localhost:8000/register",
@@ -35,12 +35,26 @@ const Register = () => {
                     body: JSON.stringify(body)
                 }
             )
-            
+
             const parseRes = await response.json()
 
-            if(parseRes.token) {
+            if (parseRes.token) {
                 //localstorage
                 localStorage.setItem("token", parseRes.token)
+                toast.success('Registered Successfully!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                setInputs({first_name: "",
+                last_name: "",
+                email: "",
+                password: ""})
             } else {
                 console.log("Something wrong")
                 toast.error(parseRes, {
@@ -52,17 +66,17 @@ const Register = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
+                });
             }
- 
+
         } catch (error) {
             console.log(error.message)
         }
-        
+
     }
     return (
         <div className="register">
-            <NavbarWel/>
+            <NavbarWel />
             <form onSubmit={onSubmitForm}>
                 <h1>Register</h1>
                 <div className="form-outline mb-4">
@@ -121,11 +135,25 @@ const Register = () => {
                     draggable
                     pauseOnHover
                     theme="colored"
-                    />
+                />
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
+                {/* Same as */}
+                <ToastContainer />
                 <p className="forgot-password text-right">Already registered?
-                <Link to="/login">Login</Link></p>
+                    <Link to="/login">Login</Link></p>
             </form>
-           
+
         </div>
     )
 }
