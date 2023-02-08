@@ -1,0 +1,35 @@
+.title, .tag, .paraflex{
+    margin-left: 5%;
+    color: rgb(29, 28, 28);
+}
+
+.title{
+    padding-top: 80px;
+
+}
+.title h1{
+    font-size: 60px;
+    text-align: left;
+}
+
+.tag h4{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.paragraph{
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: black;
+}
+.loggingin{
+    margin-left: 10%;
+}
+.loggingin button{
+    width: 120px;
+    height: 5vh;
+    border-radius: 5px;
+    background-color: rgba(136, 174, 208);
+    border: solid rgb(33, 33, 86);
+    font-size: 18px;
+}
