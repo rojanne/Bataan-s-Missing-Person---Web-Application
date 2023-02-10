@@ -127,7 +127,7 @@ app.get('/users', async (req, res) => {
 app.delete('/users/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const deleteUser = await pool.query('DELETE FROM users WHERE id = $1', [id]);
+        const deleteUser = await pool.query('DELETE FROM users WHERE usersid = $1', [id]);
         res.json('deleted');
     } catch (err) {
         console.error(err.message);
@@ -139,7 +139,7 @@ app.put('/users/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const { usertype } = req.body;
-        const updatesighted = await pool.query('UPDATE users SET usertype = $1 WHERE id = $2',
+        const updatesighted = await pool.query('UPDATE users SET usertype = $1 WHERE usersid = $2',
             [usertype, id]);
 
         res.json('updated')
@@ -270,17 +270,17 @@ app.put('/found/:id', async (req, res) => {
     }
 })
 
-//get for report sighted page updated of a single report
-// app.get('/report-found/:id', async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         const reportsfound = await pool.query(`SELECT * FROM reports INNER JOIN reports ON reports.reporterid = users.usersid
-//         INNER JOIN reports ON updatefound.reportid = reports.reportsid WHERE reportid = $1`, [id])
-//         res.json(reportsfound.rows);
-//     } catch (err) {
-//         console.error(err.message);
-//     }
-// })
+// get for report sighted page updated of a single report
+app.get('/report-found/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const reportsfound = await pool.query(`SELECT * FROM reports INNER JOIN reports ON reports.reporterid = users.usersid
+        INNER JOIN reports ON updatefound.reportid = reports.reportsid WHERE reportsid = $1`, [id])
+        res.json(reportsfound.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
 
 
 //delete a report by admin only 

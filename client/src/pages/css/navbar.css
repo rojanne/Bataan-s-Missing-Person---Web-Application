@@ -45,6 +45,7 @@ li {
   text-transform: capitalize;
   list-style-type: none;
   text-decoration: none;
+  position: relative;
 }
 .Out{
   color: black;
@@ -64,10 +65,20 @@ li {
 .mobile-menu-icon {
   display: none;
 }
-.nav-links li:hover{
-  color: darkblue;
-  font-size: 22px;
+.nav-links li::after{
+  content:'';
+    width: 0;
+    height: 3px;
+    background: rgb(78, 42, 78);
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    transition: 0.5s;
 }
+.nav-links li:hover::after {
+  width: 100%;
+}
+
 
 @media (max-width: 768px) {
   .logo {

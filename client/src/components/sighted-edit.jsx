@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import './sighted-edit.css'
+import { ToastContainer, toast } from "react-toastify";
 
 
 const SeenEdit = () => {
@@ -42,9 +43,20 @@ const SeenEdit = () => {
         } catch (err) {
             console.error(err.message);
         }
+        toast('Report Submitted Successfully!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+        setInputs({reportid: "", timeday: "", lastwhen: "", lastwhere: "", description: "", reporterid: ""})
     }
 
-    
+
 
     return (
         <div>
@@ -93,7 +105,7 @@ const SeenEdit = () => {
                             controlId="exampleForm.ControlTextarea1"
                         >
                             <Form.Label>Can you describe them?</Form.Label>
-                            <Form.Control as="textarea" rows={3} value={description} name="description" onChange={handleChange}/>
+                            <Form.Control as="textarea" rows={3} value={description} name="description" onChange={handleChange} />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
@@ -106,6 +118,18 @@ const SeenEdit = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     )
 }

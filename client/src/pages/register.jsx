@@ -75,7 +75,7 @@ const Register = () => {
 
     }
     return (
-        <div className="register">
+        <div className="login">
             <NavbarWel />
             <form onSubmit={onSubmitForm}>
                 <h1>Register</h1>

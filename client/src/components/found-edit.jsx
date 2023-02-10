@@ -23,6 +23,7 @@ const FoundEdit = ({ report }) => {
         } catch (err) {
             console.error(err.message);
         }
+        
     }
     return (
         <Fragment>

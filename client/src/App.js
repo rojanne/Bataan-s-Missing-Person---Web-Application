@@ -19,6 +19,11 @@ import Login from './pages/login';
 import Register from './pages/register';
 import Report from './pages/form-report';
 import SingleReport from './pages/single-report';
+import MissingReports from './pages/admin/missing';
+import SightedReports from './pages/admin/sighted';
+import FoundReports from './pages/admin/found';
+import AdminDashboard from './pages/admin-dashboard';
+import Users from './pages/admin/users';
 
 
 function App() {
@@ -65,6 +70,12 @@ function App() {
           <Route path="/found-reports" element={<Found />} />
           <Route path="/form-report" element={<Report />} />
           <Route path="/single-report/:reportsid" element={<SingleReport />} />
+
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/admin-missing" element={<MissingReports />} />
+          <Route path="/admin-sighted" element={<SightedReports />} />
+          <Route path="/admin-found" element={<FoundReports />} />
         </Routes>
       </Router>
     </div>

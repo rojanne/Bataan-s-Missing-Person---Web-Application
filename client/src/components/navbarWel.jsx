@@ -7,7 +7,7 @@ const NavbarWel = () => {
     const [Mobile, setMobile] = useState(false)
     return (
       <>
-        <nav className='navbar'>
+        <nav className='navbarWel'>
         <Link to="/"><img src={logo}  className="logo"/></Link>
         </nav>
       </>

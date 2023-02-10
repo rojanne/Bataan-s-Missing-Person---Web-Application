@@ -64,10 +64,10 @@ const Login = ({ setAuth }) => {//tanggal
 
             }
             // console.log(parseRes.loginUser.usersid);
-        
+
             switch (parseRes.loginUser.usertype) {
                 case 'admin':
-                    window.location = "/admin"
+                    window.location = "/users"
                     break;
                 case 'user':
                     window.location = "/home"
@@ -83,55 +83,54 @@ const Login = ({ setAuth }) => {//tanggal
     return (
         <div className="login">
             <NavbarWel />
-
-            <form className="login" onSubmit={onSubmitForm}>
-                <h1>Login</h1>
-                <div className="form-outline mb-4">
-                    <label className="form-label" for="form2Example1">Email Address</label>
-                    <br></br>
-                    <input
-                        type="text"
-                        id="emailForm"
-                        name="email"
-                        className="form-control"
-                        placeholder="Enter your Email"
-                        value={email}
-                        onChange={e => onChange(e)} />
-                </div>
-
-
-                <div className="form-outline mb-4">
-                    <label className="form-label" for="form2Example2">Password</label>
-                    <br></br>
-                    <input
-                        type="password"
-                        id="passwordForm"
-                        name="password"
-                        className="form-control"
-                        placeholder="Enter your password"
-                        value={password}
-                        onChange={e => onChange(e)} />
-                </div>
+                <form onSubmit={onSubmitForm} className='form'>
+                    <h1>Login</h1>
+                    <div className="form-outline mb-4">
+                        <label className="form-label" for="form2Example1">Email Address</label>
+                        <br></br>
+                        <input
+                            type="text"
+                            id="emailForm"
+                            name="email"
+                            className="form-control"
+                            placeholder="Enter your Email"
+                            value={email}
+                            onChange={e => onChange(e)} />
+                    </div>
 
 
-                <button type="submit" className="btn btn-primary btn-block mb-4">Sign in</button>
-                <ToastContainer
-                    position="top-right"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="colored"
-                />
-                <p className="forgot-password text-right">
-                    <Link to="/register">register</Link></p>
-            </form>
+                    <div className="form-outline mb-4">
+                        <label className="form-label" for="form2Example2">Password</label>
+                        <br></br>
+                        <input
+                            type="password"
+                            id="passwordForm"
+                            name="password"
+                            className="form-control"
+                            placeholder="Enter your password"
+                            value={password}
+                            onChange={e => onChange(e)} />
+                    </div>
 
-        </div>
+
+                    <button type="submit" className="btn btn-primary btn-block mb-4">Sign in</button>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="colored"
+                    />
+                    <p className="forgot-password text-right">
+                        <Link to="/register">register</Link></p>
+                </form>
+            </div>
+
     )
 }
 export default Login;

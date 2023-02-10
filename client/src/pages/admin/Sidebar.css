@@ -1,0 +1,44 @@
+.sidebar{
+    background: rgb(120, 162, 204);
+    color: #030303;
+    height: 150vh;
+    width: 200px;
+    transition: all 0.5s;
+}
+/* .container{
+    width: 50%;
+    margin-left: -100%;
+    display: flex;
+} */
+.top_section{
+    display: flex;
+    align-items:center;
+    padding:20px 15px;
+}
+.logo{
+    font-size: 30px;
+}
+.bars{
+    display: flex;
+    font-size: 25px;
+    margin-left: 50px;
+}
+.link{
+    display: flex;
+    color: #2a2323;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+}
+.link:hover{
+    background:rgb(0, 0, 0);
+    color: #ffffff;
+    transition: all 0.5s;
+}
+.active{
+    background: rgb(95, 135, 161);
+    color: #000;
+}
+.icon, .link_text{
+    font-size: 20px;
+}

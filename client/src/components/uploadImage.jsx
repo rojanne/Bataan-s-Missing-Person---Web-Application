@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 const UploadPhoto = () => {
     const [image, setImage] = useState({})
@@ -22,8 +24,31 @@ const UploadPhoto = () => {
                 body: formData
             })
             const parseRes = await newImage.json()
-            console.log(parseRes)
+            // console.log(parseRes)
             localStorage.setItem("image", parseRes)
+            if (parseRes) {
+                toast.info('Image Uploaded', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            } else {
+                toast.error('Please upload an image!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+            }
 
 
         } catch (error) {
@@ -37,10 +62,21 @@ const UploadPhoto = () => {
         <div>
             <Form.Group controlId="formFile" className="mb-3">
                 <Form.Label>Default file input example</Form.Label>
-                <Form.Control type="file" onChange={fileOnChange}/>
+                <Form.Control type="file" onChange={fileOnChange} />
                 <button className="button-upload btn btn-light" onClick={sendImage}>Upload</button>
             </Form.Group>
-            
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     )
 }

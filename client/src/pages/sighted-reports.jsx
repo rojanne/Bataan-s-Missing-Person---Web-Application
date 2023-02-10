@@ -54,7 +54,7 @@ const Sighted = () => {
                             Age: <span className="span">{report.age}</span><br></br>
 
                         </Card.Text>
-                        <SightedModal/>
+                        <SightedModal report = {report}/>
                     </Card.Body>
                 </Card>
             ))}

@@ -24,7 +24,7 @@ const Landing = () => {
                         Come and help us find them.
                     </p>
                     <p className="loggingin">
-                        <button><Link to="/login">Sign In Now</Link></button></p>
+                        <button><Link to="/login" style={{color: 'black'}}>Sign In Now</Link></button></p>
                 </div>
         </div>
         </>

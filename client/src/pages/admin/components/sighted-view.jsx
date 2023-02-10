@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { format } from 'date-fns'
 
-const SightedModal = ({ report }) => {
+
+const ViewSighted = ({report}) => {
     const [lgShow, setLgShow] = useState(false);
     const [updatesighted, setUpdatesighted] = useState([])
 
@@ -32,13 +33,9 @@ const SightedModal = ({ report }) => {
         getReports();
     }, []);
 
-    // const finalDate = () => {
-    //     return format(new Date(), 'MMMM dd, yyyy')
-    //   }
-    
     return (
         <div>
-            <Button onClick={() => setLgShow(true)} style={{marginLeft: '25%'}}>View Sighted History</Button>
+            <Button onClick={() => setLgShow(true)}>View</Button>
             <Modal
                 size="xl"
                 show={lgShow}
@@ -75,12 +72,9 @@ const SightedModal = ({ report }) => {
                 </tbody>
             </Table>
                 </Modal.Body>
-            </Modal>
-
-
-            
+            </Modal>   
         </div>
     );
 
 }
-export default SightedModal
+export default ViewSighted

@@ -43,7 +43,7 @@ const Found = () => {
         <div>
             <Navbar />
             <Container style={{ backgroundColor: 'rgba(0, 89, 153)', marginTop: '30px', paddingTop: '25px' }}>
-                <h1 style={{ color: 'white' }}>Currently Missing People Reports</h1>
+                <h1 style={{ color: 'white' }}>People We Found</h1>
             </Container>
             <div className="cardHolder">
                 {reports.map(report => (
@@ -55,7 +55,7 @@ const Found = () => {
                                 Age: <span className="span">{report.age}</span><br></br>
 
                             </Card.Text>
-                            <FoundModal/>
+                            <FoundModal report = {report}/>
                         </Card.Body>
                     </Card>
                 ))}

@@ -5,9 +5,7 @@ import { format } from 'date-fns'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-
-
-const FoundModal = ({ report }) => {
+const ViewFound = ({report}) => {
     const [lgShow, setLgShow] = useState(false);
     const [reports, setReports] = useState([])
 
@@ -41,7 +39,7 @@ const FoundModal = ({ report }) => {
 
     return (
         <div>
-            <Button onClick={() => setLgShow(true)} style={{ marginLeft: '25%' }}>View Found Report</Button>
+            <Button onClick={() => setLgShow(true)}>View</Button>
             <Modal
                 size="xl"
                 show={lgShow}
@@ -81,7 +79,6 @@ const FoundModal = ({ report }) => {
 
 
         </div>
-    );
-
+    )
 }
-export default FoundModal
+export default ViewFound
