@@ -57,7 +57,7 @@ const SightedReports = () => {
             <Col sm={9} className='Table'>
             <h1 className='upheader'>Sighted People Reports</h1>
             <Table responsive >
-                <thead class="thead-dark">
+                <thead className='theHead'>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>

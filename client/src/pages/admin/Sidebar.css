@@ -36,8 +36,8 @@
     transition: all 0.5s;
 }
 .active{
-    background: rgb(95, 135, 161);
-    color: #000;
+    background: rgb(0, 0, 0);
+    color: #fffefe;
 }
 .icon, .link_text{
     font-size: 20px;

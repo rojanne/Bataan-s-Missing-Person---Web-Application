@@ -38,7 +38,7 @@ const SightedModal = ({ report }) => {
     
     return (
         <div>
-            <Button onClick={() => setLgShow(true)} style={{marginLeft: '25%'}}>View Sighted History</Button>
+            <Button onClick={() => setLgShow(true)} style={{marginLeft: '25%'}}>Sighted History</Button>
             <Modal
                 size="xl"
                 show={lgShow}
@@ -48,12 +48,12 @@ const SightedModal = ({ report }) => {
             >
                 <Modal.Header closeButton style={{backgroundColor: 'rgba(120, 162, 204)'}}>
                     <Modal.Title id="example-modal-sizes-title-lg" style={{fontWeight: '600'}} >
-                        Sighted History
+                        Sighted History of {report.given_name} {report.surname}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body >
                 <Table striped bordered hover style={{backgroundColor: "whitesmoke"}}>
-                <thead> 
+                <thead style={{backgroundColor: 'rgb(168, 238, 255)'}}> 
                     <tr>
                         <th>Seen When</th>
                         <th>Time of day</th>

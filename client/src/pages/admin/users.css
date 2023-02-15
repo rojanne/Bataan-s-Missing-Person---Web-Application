@@ -1,10 +1,23 @@
 
-
 .Table {
     margin-left: -5%;
+    margin-top: 20px;
+    background-color: rgb(48, 88, 89);
+    height: fit-content;
 }
 .table {
    border: 3px solid black;
    padding: 3px 3px;
    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 25px;
+   background-color: aliceblue;
+   padding: 5px 40px;
 }
+.theHead {
+    background-color: rgb(136, 174, 208);
+    font-size: 18px;
+}
+.upheader{
+    margin-top: 10px;
+    color: azure;
+}
+

@@ -4,7 +4,9 @@ import {
     FaUsers,
     FaFileContract,
     FaRegEye,
-    FaSearch
+    FaSearch,
+    FaUserTie,
+    FaSignOutAlt
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 import "./Sidebar.css"
@@ -14,6 +16,11 @@ const Sidebar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
+        {
+            path:"/admin",
+            name:"Admin Dashboard",
+            icon:<FaUserTie/>
+        },
         {
             path:"/users",
             name:"Users",
@@ -33,6 +40,11 @@ const Sidebar = ({children}) => {
             path:"/admin-found",
             name:"Found Reports",
             icon:<FaSearch/>
+        },
+        {
+            path:"/",
+            name:"Sign Out",
+            icon:<FaSignOutAlt/>
         }
     ]
     return (

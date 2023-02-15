@@ -40,21 +40,18 @@ const Found = () => {
 
 
     return (
-        <div>
+        <div className="missingAll">
             <Navbar />
-            <Container style={{ backgroundColor: 'rgba(0, 89, 153)', marginTop: '30px', paddingTop: '25px' }}>
-                <h1 style={{ color: 'white' }}>People We Found</h1>
+            <Container style={{backgroundColor: 'rgb(8, 11, 53)', marginTop: '30px', paddingTop: '25px' }}>
+                <h1 style={{ color: 'rgb(225, 245, 243)' }}>People We Found</h1>
             </Container>
             <div className="cardHolder">
                 {reports.map(report => (
-                    <Card style={{ width: '22rem', border: '2px solid rgba(0, 51, 102)', marginBottom: '30px' }}>
-                        <Card.Img variant="top" src={require(`../Images/${report.image}`)} style={{ height: '320px' }} />
-                        <Card.Body style={{ backgroundColor: 'rgba(171, 215, 236)' }}>
-                            <Card.Title style={{ fontSize: '22px', textAlign: 'center', marginTop: '10px' }}><span className="span" style={{ fontSize: '24px', fontWeight: '700' }}>{report.given_name} {report.surname}</span></Card.Title>
-                            <Card.Text style={{ fontSize: '16px', color: 'black', textAlign: 'center' }}>
-                                Age: <span className="span">{report.age}</span><br></br>
-
-                            </Card.Text>
+                    <Card style={{ width: '20rem', border: '4px solid rgb(8, 11, 53)' , marginBottom: '30px'}}>
+                        <Card.Img variant="top" src={require(`../Images/${report.image}`)} style={{ height: '300px' }} />
+                        <Card.Body style={{ backgroundColor: 'rgb(201, 233, 245)', height: '120px'}}>
+                            <Card.Title style={{ fontSize: '22px', textAlign: 'center', marginTop: '10px', marginBottom: '15px' }}><span className="span" style={{ fontSize: '24px', fontWeight: '700' }}>{report.given_name} {report.surname}</span></Card.Title>
+                            
                             <FoundModal report = {report}/>
                         </Card.Body>
                     </Card>

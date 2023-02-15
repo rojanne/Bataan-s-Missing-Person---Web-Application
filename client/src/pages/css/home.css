@@ -26,6 +26,9 @@
     width: 230px;
     border: solid rgb(208, 137, 7);
 }
+.buttonform:hover{
+    background-color: rgb(238, 137, 59);
+}
 .lost h5{
     text-align: left;
     margin-left: 10%;

@@ -24,6 +24,7 @@ import SightedReports from './pages/admin/sighted';
 import FoundReports from './pages/admin/found';
 import AdminDashboard from './pages/admin-dashboard';
 import Users from './pages/admin/users';
+import FemaleOnly from './components/female';
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
           <Route path="/found-reports" element={<Found />} />
           <Route path="/form-report" element={<Report />} />
           <Route path="/single-report/:reportsid" element={<SingleReport />} />
+          <Route path="/female-only" element={<FemaleOnly />} />
 
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/users" element={<Users />} />

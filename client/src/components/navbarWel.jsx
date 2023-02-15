@@ -8,7 +8,7 @@ const NavbarWel = () => {
     return (
       <>
         <nav className='navbarWel'>
-        <Link to="/"><img src={logo}  className="logo"/></Link>
+        <img src={logo}  className="logo"/>
         </nav>
       </>
     )

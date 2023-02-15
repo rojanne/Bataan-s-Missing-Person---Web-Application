@@ -66,7 +66,7 @@ const MissingReports = () => {
                     <Col sm={9} className="Table">
                         <h1 className='upheader'>Missing People Reports</h1>
                         <Table hover responsive className='table'>
-                            <thead className="thead-dark">
+                            <thead className='theHead'>
                                 <tr>
                                     <th>Report ID</th>
                                     <th>Name</th>

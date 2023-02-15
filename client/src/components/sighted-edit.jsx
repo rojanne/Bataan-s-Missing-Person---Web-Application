@@ -114,7 +114,7 @@ const SeenEdit = () => {
                         Close
                     </Button>
                     <Button variant="primary" onClick={sightedReport}>
-                        Save Changes
+                        Submit
                     </Button>
                 </Modal.Footer>
             </Modal>

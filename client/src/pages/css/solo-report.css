@@ -1,18 +1,16 @@
 .Solo {
     background-image: url('https://media.istockphoto.com/id/700824756/photo/moody-landscape-with-a-foggy-road.jpg?s=612x612&w=0&k=20&c=aItag2lok5vqYMq8P9e6m_aBVUForUWJ-OybjPPba7Q=');
-    height: 120vh;
+    height: fit-content;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 7%;
-}
-
-.soloReport {
-    width: 75%;
-    margin-left: 15%;
+    padding-top: 4%;
+    overflow: hidden;
 }
 
 .bigRow {
     border-top-left-radius: 15px;
+    width: 80%;
+    margin-left: 12%;
 }
 .colBig {
     border-top-left-radius: 15px;
@@ -20,9 +18,9 @@
     padding: 20px 10px;
 }
 .headers {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    color:rgba(254, 169, 35);
+    color:rgb(255, 110, 1);
     margin-right: 10px;
     margin-bottom: 5px;
     margin-top: 15px;
@@ -31,23 +29,37 @@
     margin-right: 10px;
 }
 .colSm {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 450;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 .space {
-    margin-left: 10px;
+    margin-left: 30px;
     font-weight: 400;
 }
 .reporter {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 20px;
     font-weight: 450;
-    color: rgb(203, 141, 26);
+    color: rgb(255, 94, 1);
 }
 .colRight {
-    background-color: rgba(234, 162, 33);
+    background-color: rgba(255, 157, 0);
     padding-top: 70px;
     border-bottom-right-radius: 15px;
+}
+.backTo {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    border-radius: 5px;
+    margin-top: -60px;
+    margin-left: 330px;
+}
+.divider{
+    border-bottom: 2px dashed black;
+}
+.name{
+    margin-top: 40px;
 }

@@ -41,7 +41,7 @@ const FoundModal = ({ report }) => {
 
     return (
         <div>
-            <Button onClick={() => setLgShow(true)} style={{ marginLeft: '25%' }}>View Found Report</Button>
+            <Button onClick={() => setLgShow(true)} style={{ marginLeft: '27%' }}>Found Report</Button>
             <Modal
                 size="xl"
                 show={lgShow}
@@ -57,7 +57,7 @@ const FoundModal = ({ report }) => {
                 <Modal.Body >
 
                     <Card style={{ width: '68rem', border: '1px solid' }}>
-                        <Card.Header style={{fontSize: '18px', fontWeight:'500', textAlign: 'center'}}>{report.given_name} {report.surname}</Card.Header>
+                        <Card.Header style={{fontSize: '18px', fontWeight:'500', textAlign: 'center', backgroundColor: 'rgb(168, 238, 255)'}}>{report.given_name} {report.surname}</Card.Header>
                         <ListGroup variant="flush">
                             <ListGroup.Item style={{ fontWeight: '500' }}>Found When: <span style={{ marginLeft: '40px', fontWeight: '400' }}>
                                 {finalDate(reports.seenwhen)}

@@ -47,7 +47,7 @@ app.post('/register', async (req, res) => {
 
         //generate and return the JWT token
         const token = generateJWT(newUser.rows[0])
-
+        
         res.json({
             token
         })
@@ -193,11 +193,11 @@ app.get('/reports/:id', async (req, res) => {
 app.put('/reports/:report_id', async (req, res) => {
     try {
         const { report_id } = req.params;
-        const { image, surname, given_name, nickname, age, height, weight, hair, clothes, identifying_char, seenwhen,
+        const {  surname, given_name, nickname, age, height, weight, hair, clothes, identifying_char, seenwhen,
             seenwhere, person, relationship, contact_no, house_no, street, barangay, municipality }
             = req.body;
-        const updateReport = await pool.query('UPDATE reports SET image = $1, surname = $2, given_name = $3, nickname = $4, age = $5, height = $6, weight = $7, hair = $8, clothes = $9, identifying_char = $10, seenwhen = $11, seenwhere = $12, person = $13, relationship = $14, contact_no = $15, house_no = $16, street = $17, barangay = $18, municipality = $19 WHERE reportsid = $20',
-            [image, surname, given_name, nickname, age, height, weight, hair, clothes, identifying_char, seenwhen,
+        const updateReport = await pool.query('UPDATE reports SET surname = $1, given_name = $2, nickname = $3, age = $4, height = $5, weight = $6, hair = $7, clothes = $8, identifying_char = $9, seenwhen = $10, seenwhere = $11, person = $12, relationship = $13, contact_no = $14, house_no = $15, street = $16, barangay = $17, municipality = $18 WHERE reportsid = $19',
+            [surname, given_name, nickname, age, height, weight, hair, clothes, identifying_char, seenwhen,
                 seenwhere, person, relationship, contact_no, house_no, street, barangay, municipality, report_id]);
 
         res.json('updated')
@@ -209,7 +209,7 @@ app.put('/reports/:report_id', async (req, res) => {
 // get all sighted reports for sighted page
 app.get('/sighted', async (req, res) => {
     try {
-        const reports = await pool.query('SELECT DISTINCT ON (reportid) * FROM updatesighted INNER JOIN reports ON updatesighted.reportid = reports.reportsid INNER JOIN users ON updatesighted.reporterid = users.usersid');
+        const reports = await pool.query('SELECT DISTINCT ON (reportid) * FROM updatesighted INNER JOIN reports ON updatesighted.reportid = reports.reportsid INNER JOIN users ON updatesighted.reporterid = users.usersid WHERE typeid = 1');
         res.json(reports.rows);
     } catch (err) {
         console.error(err.message);
@@ -349,6 +349,65 @@ app.get('/photos', async (req, res) => {
         console.log(error.message)
     }
 })
+
+
+//counts
+app.get('/count-reports', async (req, res) => {
+    try {
+        const count = await pool.query('SELECT COUNT(reportsid) FROM reports');
+        res.json(count.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+app.get('/count-missingreports', async (req, res) => {
+    try {
+        const count = await pool.query('SELECT COUNT(reportsid) FROM reports WHERE typeid = 1');
+        res.json(count.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+app.get('/count-foundreports', async (req, res) => {
+    try {
+        const count = await pool.query('SELECT COUNT(reportsid) FROM reports WHERE typeid = 3');
+        res.json(count.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+app.get('/count-sightedreports', async (req, res) => {
+    try {
+        const count = await pool.query('SELECT COUNT(Distinct reportid) FROM updatesighted');
+        res.json(count.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+app.get('/count-users', async (req, res) => {
+    try {
+        const count = await pool.query('SELECT COUNT(usersid) FROM users');
+        res.json(count.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+//filter 
+// app.get('/reports?sort=gender&orderby=asc', async (req, res) => {
+    
+//     try {
+//         const report = await pool.query(`SELECT * FROM reports`);
+//         res.json(report.rows);
+//     } catch (err) {
+//         console.error(err.message);
+//     }
+// })
+
 
 app.listen(8000, () => {
     console.log('server has started on port 8000')

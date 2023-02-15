@@ -67,7 +67,7 @@ const Login = ({ setAuth }) => {//tanggal
 
             switch (parseRes.loginUser.usertype) {
                 case 'admin':
-                    window.location = "/users"
+                    window.location = "/admin"
                     break;
                 case 'user':
                     window.location = "/home"
@@ -127,7 +127,7 @@ const Login = ({ setAuth }) => {//tanggal
                         theme="colored"
                     />
                     <p className="forgot-password text-right">
-                        <Link to="/register">register</Link></p>
+                        <Link to="/register">Not yet registered? Register here</Link></p>
                 </form>
             </div>
 

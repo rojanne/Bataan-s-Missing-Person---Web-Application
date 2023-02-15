@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { FaBars } from "react-icons/fa"
 import { ImCross } from "react-icons/im"
 import logo from "../pages/images/MP.png"
-import { toast } from "react-toastify";
+
 
 
 
@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       <nav className='navbar'>
-        <img src={logo}  className="logo"/>
+        <img src={logo} className="logoNav"/>
         
         <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={() => setMobile(false)}>
           <Link to='/home' style={{ textDecoration: 'none'}} className='Home'>

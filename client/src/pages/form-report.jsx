@@ -38,7 +38,7 @@ const Report = () => {
                 hair, clothes, identifying_char, seenwhen, seenwhere, person, relationship,
                 contact_no, house_no, street, barangay, municipality, reporterid: localStorage.getItem("userID")
             }
-            console.log(localStorage.getItem("image"))
+            // console.log(localStorage.getItem("image"))
             if (JSON.stringify(errors) === "{}") {
                 const response = await fetch(
                     "http://localhost:8000/reports",

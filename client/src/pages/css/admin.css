@@ -1,0 +1,35 @@
+
+.chart{
+    width: 80%;
+    background-color: white;
+    margin-left: 10%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(159, 224, 227);
+}
+.headerBar{
+    text-align: center;
+    margin-top: 20px;
+}
+.rightBar{
+    background-color: rgb(48, 88, 89);
+    height: 100vh;
+    margin-top: 10px;
+}
+.botBar{
+    margin-top: 50px;
+    margin-left: 9%;
+}
+.cardHeader{
+    font-size: 20px;
+    font-weight: 700;
+}
+.cardList{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.spanList{
+    font-weight: 700;
+    font-size: 24px;
+}

@@ -18,16 +18,16 @@ li {
   align-items: center;
   height: 10vh;
   box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px;
-  background-color: rgba(191, 212, 219);
+  background-color: rgb(120, 162, 204);
 
   /*box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
 }
-.logo {
+.logoNav {
   padding-top: 0;
   width: 250px;
   height:9vh;
-  margin-left: 0px;
-  margin-top: -15px;
+  margin-top: -20px;
+  margin-left: -40px;
 }
 .nav-links {
   display: flex;

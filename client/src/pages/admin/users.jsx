@@ -66,12 +66,13 @@ const Users = () => {
     return (
         <div>
             <NavbarWel />
+            <div className='all'>
             <Row>
                 <Col sm={3}> <Sidebar /></Col>
                 <Col sm={9} className="Table">
-                    <h1 className='upheader'>Users</h1>
+                    <h1 className='upheader'>Current Users</h1>
                     <Table hover responsive className='table'>
-                        <thead>
+                        <thead className='theHead'>
                             <tr>
                                 <th>ID</th>
                                 <th>First Name</th>
@@ -110,7 +111,7 @@ const Users = () => {
                 pauseOnHover
                 theme="dark"
             />
-
+            </div>
         </div>
     )
 }
