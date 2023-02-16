@@ -12,14 +12,18 @@
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
+    margin-left: 40px;
+    text-shadow: 3px 3px 4px rgb(124, 189, 211);
 }
 
 .reportP {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
+    text-decoration: underline;
 }
 .reportForm h6 {
-    font-size: px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 p {

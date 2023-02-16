@@ -55,7 +55,7 @@ const SightedReports = () => {
         <Row>
             <Col sm={3}> <Sidebar /></Col>
             <Col sm={9} className='Table'>
-            <h1 className='upheader'>Sighted People Reports</h1>
+            <h1 className='upheader'>Sighted Person Reports</h1>
             <Table responsive >
                 <thead className='theHead'>
                     <tr>

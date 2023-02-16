@@ -123,10 +123,10 @@ const Report = () => {
             <Navbar />
             <Container style={{ marginLeft: "12%", marginTop: "5%", marginBottom: "0" }}>
                 <h3 className='reportTitle'>Report a Missing Person Form</h3>
-                <h6 className='reportP'>Please provide as much detail as possible.</h6>
             </Container>
             <Form className="reportForm" onSubmit={onSubmitForm}>
-                <h6>Please upload a high quality image of the missing person (ideally head & shoulders only)</h6>
+                <h4 className='reportP'>Be truthful and provide as much detail as possible.</h4><br></br>
+                <h6 className='reportH'>Please upload a high quality image of the missing person (ideally head & shoulders only)</h6>
                 <UploadPhoto /><br></br>
                 <h6>Personal Details</h6>
                 <Row className="mb-3">

@@ -43,19 +43,22 @@ const AdminDashboard = () => {
             <Row>
                 <Col sm={3}> <Sidebar /></Col>
                 <Col sm={9} className="rightBar">
-                    <Row className="chart">
-                        <h1 className="headerBar">Reports Chart</h1>
-                        <BarChart/>
-                    </Row>
                     <Row className="botBar">
                         <Col>
-                            <Card style={{ width: '28rem', height: '8rem' }}>
+                            <h3 className="adminHead">Bataan's Missing Person Admin Dashboard</h3>
+                        </Col>
+                        <Col>
+                            <Card style={{ width: '18rem', height: '6rem' }} className="cardAd">
                                 <Card.Header className="cardHeader">Total Number of Users</Card.Header>
                                 <ListGroup variant="flush">
                                     <ListGroup.Item className="cardList">Current Users : <span className="spanList">{users.count}</span> </ListGroup.Item>
                                 </ListGroup>
                             </Card>
                         </Col>
+                    </Row>
+                    <Row className="chart">
+                        <h1 className="headerBar">Reports Chart</h1>
+                        <BarChart/>
                     </Row>
                 </Col>
             </Row>

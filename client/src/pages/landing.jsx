@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Container from 'react-bootstrap/Container';
 import "./css/landing.css"
 import NavbarWel from "../components/navbarWel";
+import Button from "react-bootstrap/esm/Button";
 
 const Landing = () => {
     return (
@@ -12,7 +12,7 @@ const Landing = () => {
                 backgroundImage: `url("https://i.ytimg.com/vi/WO68HoTiLp0/maxresdefault.jpg")`,
                 backgroundSize:`cover`}}>
                 <div className="title">
-                    <h1>Missing <span>People</span></h1>
+                    <h1>Bataan's <span>Missing Person</span></h1>
                 </div>
                 <div className="tag">
                     <h4>Help Us Find Them</h4>
@@ -24,7 +24,7 @@ const Landing = () => {
                         Come and help us find them.
                     </p>
                     <p className="loggingin">
-                        <button><Link to="/login" style={{color: 'black'}}>Sign In Now</Link></button></p>
+                        <Button><Link to="/login" style={{color: 'black'}}>Sign In Now</Link></Button></p>
                 </div>
         </div>
         </>

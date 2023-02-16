@@ -3,7 +3,7 @@ import "../pages/css/navbar.css"
 import { Link, useNavigate } from "react-router-dom"
 import { FaBars } from "react-icons/fa"
 import { ImCross } from "react-icons/im"
-import logo from "../pages/images/MP.png"
+import logo from "../pages/images/bmp3.png"
 
 
 

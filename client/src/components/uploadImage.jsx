@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import Col from 'react-bootstrap/esm/Col';
+import Row from 'react-bootstrap/esm/Row';
 
 const UploadPhoto = () => {
     const [image, setImage] = useState({})
@@ -61,9 +63,10 @@ const UploadPhoto = () => {
     return (
         <div>
             <Form.Group controlId="formFile" className="mb-3">
-                <Form.Label>Default file input example</Form.Label>
-                <Form.Control type="file" onChange={fileOnChange} />
-                <button className="button-upload btn btn-light" onClick={sendImage}>Upload</button>
+            <Row>
+                <Col ><Form.Control type="file" onChange={fileOnChange} /></Col>
+                <Col ><button className="button-upload btn btn-primary" onClick={sendImage}>Upload</button></Col>
+                </Row>
             </Form.Group>
             <ToastContainer
                 position="top-center"

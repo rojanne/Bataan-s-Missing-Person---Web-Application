@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./navbarWel.css"
-import logo from "../pages/images/MP.png"
-import { Link } from "react-router-dom"
+import logo from "../pages/images/bmp3.png"
+
 
 const NavbarWel = () => {
     const [Mobile, setMobile] = useState(false)

@@ -19,17 +19,32 @@
 .botBar{
     margin-top: 50px;
     margin-left: 9%;
+    margin-bottom: 70px;
 }
 .cardHeader{
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 650;
+    background-color: rgb(236, 211, 103);
 }
 .cardList{
     font-size: 18px;
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .spanList{
+    font-weight: 900;
+    font-size: 28px;
+    margin-left: 40px;
+}
+.adminHead {
+    font-size: 38px;
     font-weight: 700;
-    font-size: 24px;
+    text-decoration: underline;
+    color: aliceblue;
+    text-shadow: 5px 5px 4px  rgb(22, 186, 197);
+}
+.cardAd{
+    margin-top: 50px;
+    margin-left: 90px;
+    border: 2px solid rgb(5, 44, 92);
 }

@@ -4,32 +4,38 @@
 }
 
 .title{
-    padding-top: 80px;
+    padding-top: 100px;
 
 }
 .title h1{
     font-size: 60px;
     text-align: left;
+    font-weight: 700;
+    text-shadow: 5px 5px 4px rgb(124, 189, 211);
+    margin-bottom: 5px;
 }
 
 .tag h4{
-    font-size: 30px;
+    font-size: 34px;
     margin-bottom: 30px;
+    font-weight: 600;
+    text-shadow: 5px 5px 4px rgb(124, 189, 211);
 }
 
 .paragraph{
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 22px;
     color: black;
+    font-weight: 450;
 }
-.loggingin{
+/* .loggingin{
     margin-left: 10%;
-}
+} */
 .loggingin button{
-    width: 130px;
-    height: 6vh;
+    width: 180px;
+    height: 7vh;
     border-radius: 5px;
     background-color: rgba(136, 174, 208);
     border: solid rgb(33, 33, 86);
-    font-size: 18px;
+    font-size: 20px;
 }

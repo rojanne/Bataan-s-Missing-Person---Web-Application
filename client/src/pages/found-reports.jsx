@@ -42,8 +42,8 @@ const Found = () => {
     return (
         <div className="missingAll">
             <Navbar />
-            <Container style={{backgroundColor: 'rgb(8, 11, 53)', marginTop: '30px', paddingTop: '25px' }}>
-                <h1 style={{ color: 'rgb(225, 245, 243)' }}>People We Found</h1>
+            <Container style={{backgroundColor: 'rgb(8, 11, 53)', marginTop: '30px', paddingTop: '20px' }}>
+                <h1 style={{ color: 'rgb(225, 245, 243)',  fontSize: '32px' }}>People We Found</h1>
             </Container>
             <div className="cardHolder">
                 {reports.map(report => (

@@ -44,8 +44,8 @@ const ViewSighted = ({report}) => {
                 style={{marginTop: '10%'}}
             >
                 <Modal.Header closeButton style={{backgroundColor: 'rgba(120, 162, 204)'}}>
-                    <Modal.Title id="example-modal-sizes-title-lg" style={{fontWeight: '600'}} >
-                        Sighted History
+                    <Modal.Title id="example-modal-sizes-title-lg" style={{fontWeight: '700'}} >
+                        Sighted History of {report.given_name} {report.surname}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body >

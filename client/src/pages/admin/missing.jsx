@@ -64,7 +64,7 @@ const MissingReports = () => {
                 <Row>
                     <Col sm={3}> <Sidebar /></Col>
                     <Col sm={9} className="Table">
-                        <h1 className='upheader'>Missing People Reports</h1>
+                        <h1 className='upheader'>Missing Person Reports</h1>
                         <Table hover responsive className='table'>
                             <thead className='theHead'>
                                 <tr>
