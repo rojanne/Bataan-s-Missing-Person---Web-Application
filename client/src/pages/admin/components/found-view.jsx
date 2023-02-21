@@ -58,7 +58,7 @@ const ViewFound = ({report}) => {
                         <Card.Header style={{fontSize: '18px', fontWeight:'500', textAlign: 'center'}}>{report.given_name} {report.surname}</Card.Header>
                         <ListGroup variant="flush">
                             <ListGroup.Item style={{ fontWeight: '500' }}>Found When: <span style={{ marginLeft: '40px', fontWeight: '400' }}>
-                                {finalDate(reports.seenwhen)}
+                            { format(new Date(report.seenwhen), 'MMMM dd, yyyy')}
                             </span></ListGroup.Item>
                             <ListGroup.Item style={{ fontWeight: '500' }}>Found Where: <span style={{ marginLeft: '40px', fontWeight: '400' }}>
                                 {reports.seenwhere}</span>

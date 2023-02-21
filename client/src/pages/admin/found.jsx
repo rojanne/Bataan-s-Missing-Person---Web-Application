@@ -75,8 +75,8 @@ const FoundReports = () => {
                                     <th>Name</th>
                                     <th>Age</th>
                                     <th>Person to Contact</th>
-                                    <th>View</th>
-                                    <th>Delete</th>
+                                    <th>Action</th>
+                                   
                                 </tr>
                             </thead>
                             <tbody>
@@ -86,9 +86,9 @@ const FoundReports = () => {
                                         <td>{report.given_name} {report.surname}</td>
                                         <td>{report.age}</td>
                                         <td>{report.person}</td>
-                                        <td><ViewFound report={report}/></td>
-                                        <td><button className="btn btn-danger"
+                                        <td style={{display: 'flex', gap: '10px'}}><ViewFound className="some" report={report}/><button className="btn btn-danger"
                                             onClick={() => deleteReport(report.reportsid)}>Delete</button></td>
+                            
                                     </tr>
                                 ))}
                             </tbody>

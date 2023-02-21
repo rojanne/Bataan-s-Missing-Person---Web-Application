@@ -73,8 +73,8 @@ const MissingReports = () => {
                                     <th>Age</th>
                                     <th>Person to Contact</th>
                                     <th>Reported by</th>
-                                    <th>View</th>
-                                    <th>Delete</th>
+                                    <th>Action</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -85,9 +85,9 @@ const MissingReports = () => {
                                         <td>{report.age}</td>
                                         <td>{report.person}</td>
                                         <td>{report.first_name} {report.last_name}</td>
-                                        <td><ViewMissing report={report}/></td>
-                                        <td><button className="btn btn-danger"
+                                        <td style={{display: 'flex', gap: '10px'}}><ViewMissing className="some" report={report}/><button className="btn btn-danger"
                                             onClick={() => deleteReport(report.reportsid)}>Delete</button></td>
+                                        
                                     </tr>
                                 ))}
                             </tbody>

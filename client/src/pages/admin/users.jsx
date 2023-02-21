@@ -79,8 +79,8 @@ const Users = () => {
                                 <th>Last Name</th>
                                 <th>Email</th>
                                 <th>User Type</th>
-                                <th>Delete</th>
-                                <th>Edit</th>
+                                <th>Action</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -91,8 +91,8 @@ const Users = () => {
                                     <td>{user.last_name}</td>
                                     <td>{user.email}</td>
                                     <td>{user.usertype}</td>
-                                    <td><button className="btn btn-danger" onClick={() => deleteUser(user.usersid)}>Delete</button></td>
-                                    <td><UserEdit user={user}/></td>
+                                    <td style={{display: 'flex', gap: '10px'}}><button className="btn btn-danger" onClick={() => deleteUser(user.usersid)}>Delete</button><UserEdit user={user}/></td>
+                                   
                                 </tr>
                             ))}
                         </tbody>

@@ -59,12 +59,12 @@ const SightedReports = () => {
             <Table responsive >
                 <thead className='theHead'>
                     <tr>
-                        <th>ID</th>
+                        <th>Report ID</th>
                         <th>Name</th>
                         <th>Age</th>
                         <th>Person to Contact</th>
-                        <th>View</th>
-                        <th>Delete</th>                       
+                        <th>Action</th>
+                                            
                     </tr>
                 </thead>
                 <tbody>
@@ -74,9 +74,9 @@ const SightedReports = () => {
                             <td>{report.given_name} {report.surname}</td>
                             <td>{report.age}</td>
                             <td>{report.person}</td>
-                            <td><ViewSighted report={report}/></td>
-                            <td><button className="btn btn-danger"
+                            <td style={{display: 'flex', gap: '10px'}}><ViewSighted className="some" report={report}/><button className="btn btn-danger"
                                 onClick={() => deleteReport(report.reportsid)}>Delete</button></td>
+                            
                         </tr>
                     ))}
                 </tbody>

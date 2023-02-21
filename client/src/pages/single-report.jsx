@@ -49,14 +49,24 @@ const SingleReport = () => {
     }
   };
 
+  console.log(report.seenwhen)
   const finalDate = () => {
     return format(new Date(), 'MMMM dd, yyyy')
   }
+  
+  //  console.log(format(2022-12-29), 'MMMM dd, yyyy')
+  // console.log(report.seenwhen)
+  // console.log(report.seenwhere)
 
+
+  
 
   useEffect(() => {
     getReports();
   }, []);
+  // useEffect(() => {
+  //   finalDate();
+  // }, []);
 
 
   return (

@@ -12,7 +12,7 @@
     margin-top: 20px;
 }
 .rightBar{
-    background-color: rgb(48, 88, 89);
+    background-color:rgb(201, 222, 240);
     height: 100vh;
     margin-top: 10px;
 }
@@ -40,11 +40,11 @@
     font-size: 38px;
     font-weight: 700;
     text-decoration: underline;
-    color: aliceblue;
+    color: rgb(22, 35, 46);
     text-shadow: 5px 5px 4px  rgb(22, 186, 197);
 }
 .cardAd{
     margin-top: 50px;
     margin-left: 90px;
-    border: 2px solid rgb(5, 44, 92);
+  
 }

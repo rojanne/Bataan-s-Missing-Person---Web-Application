@@ -9,7 +9,7 @@ import './sighted-edit.css'
 import { ToastContainer, toast } from "react-toastify";
 
 
-const SeenEdit = () => {
+const SeenEdit = ({report}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -28,7 +28,7 @@ const SeenEdit = () => {
         // console.log("hello");
         e.preventDefault();
         try {
-            const body = { reportid: localStorage.getItem("reportID"), timeday, lastwhen, lastwhere, description, reporterid: localStorage.getItem("userID") };
+            const body = { reportid: report.reportsid, timeday, lastwhen, lastwhere, description, reporterid: localStorage.getItem("userID") };
             const response = await fetch(
                 `http://localhost:8000/report-sighted`,
                 {
@@ -43,16 +43,16 @@ const SeenEdit = () => {
         } catch (err) {
             console.error(err.message);
         }
-        toast('Report Submitted Successfully!', {
-            position: "top-center",
+        toast.info('Report submitted successfully!', {
+            position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
-        });
+            theme: "colored",
+            });
         setInputs({reportid: "", timeday: "", lastwhen: "", lastwhere: "", description: "", reporterid: ""})
     }
 
@@ -70,6 +70,7 @@ const SeenEdit = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form className="formEdit">
+                        <div>Please provide honest information.</div>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>When did you see them?</Form.Label>
                             <Form.Control

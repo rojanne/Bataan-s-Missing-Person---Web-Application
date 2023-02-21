@@ -238,7 +238,7 @@ app.get('/report-sighted/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const reportssighted = await pool.query(`SELECT * FROM updatesighted INNER JOIN users ON updatesighted.reporterid = users.usersid
-        INNER JOIN reports ON updatesighted.reportid = reports.reportsid WHERE reportid = $1`, [id])
+        INNER JOIN reports ON updatesighted.reportid = reports.reportsid WHERE reportid = $1 ORDER BY lastwhen ASC`, [id])
         res.json(reportssighted.rows);
     } catch (err) {
         console.error(err.message);

@@ -42,6 +42,7 @@ const Login = ({ setAuth }) => {//tanggal
             )
 
             const parseRes = await response.json()
+            console.log(parseRes)
 
             if (parseRes.token) {
                 //localstorage
@@ -126,8 +127,8 @@ const Login = ({ setAuth }) => {//tanggal
                         pauseOnHover
                         theme="colored"
                     />
-                    <p className="forgot-password text-right">
-                        <Link to="/register">Not yet registered? Register here</Link></p>
+                    <p className="forgot-password text-right"><>Not yet registered? </>
+                        <Link to="/register"><span className="reg">Register here</span></Link></p>
                 </form>
             </div>
 

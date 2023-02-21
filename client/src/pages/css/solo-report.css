@@ -1,19 +1,15 @@
 .Solo {
-    background-image: url('https://media.istockphoto.com/id/700824756/photo/moody-landscape-with-a-foggy-road.jpg?s=612x612&w=0&k=20&c=aItag2lok5vqYMq8P9e6m_aBVUForUWJ-OybjPPba7Q=');
-    height: fit-content;
-    background-repeat: no-repeat;
-    background-size: cover;
     padding-top: 4%;
     overflow: hidden;
 }
 
 .bigRow {
-    border-top-left-radius: 15px;
-    width: 80%;
-    margin-left: 12%;
+    width: 90%;
+    margin-left: 5%;
 }
 .colBig {
-    border-top-left-radius: 15px;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
     background-color: aliceblue;
     padding: 20px 10px;
 }
@@ -47,7 +43,8 @@
 .colRight {
     background-color: rgba(255, 157, 0);
     padding-top: 70px;
-    border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 5%;
+    border-top-right-radius: 5%;
 }
 .backTo {
     text-decoration: none;
@@ -62,4 +59,8 @@
 }
 .name{
     margin-top: 40px;
+    font-weight: 700;
+    background-color: rgb(32, 31, 31);
+    color: aliceblue;
+    align-content: center;
 }

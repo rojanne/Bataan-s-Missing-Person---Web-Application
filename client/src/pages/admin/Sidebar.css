@@ -1,8 +1,9 @@
 .sidebar{
-    background: rgb(120, 162, 204);
+    background: rgb(14, 40, 59);
     color: #030303;
-    height: 150vh;
-    width: 200px;
+    min-height: 150vh;
+    max-height: 200vh;
+    width: 250px;
     transition: all 0.5s;
 }
 /* .container{
@@ -17,6 +18,7 @@
 }
 .logo{
     font-size: 30px;
+    color: #bddaf2;
 }
 .bars{
     display: flex;
@@ -25,7 +27,7 @@
 }
 .link{
     display: flex;
-    color: #2a2323;
+    color: #a4c0e6;
     padding: 10px 15px;
     gap: 15px;
     transition: all 0.5s;
@@ -41,4 +43,19 @@
 }
 .icon, .link_text{
     font-size: 20px;
+}
+.signOut{
+    margin-top: 150px;
+    color: #a4c0e6;
+    padding: 10px 15px;
+    transition: all 0.5s;
+    font-size: 20px;
+}
+.signOut:hover{
+    background:rgb(0, 0, 0);
+    color: #ffffff;
+    transition: all 0.5s;
+}
+.iconOut{
+    margin-right: 15px;
 }

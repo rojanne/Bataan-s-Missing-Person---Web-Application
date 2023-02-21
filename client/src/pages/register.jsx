@@ -94,23 +94,23 @@ const Register = () => {
         const validate = (values) => {
             const errors = {};
             if (!values.first_name) {
-                errors.first_name = "Name is required!";
+                errors.first_name = "First name is required!";
             }
             if (!values.last_name) {
-                errors.last_name = "Name is required!";
+                errors.last_name = "Last name is required!";
             }
             if (!values.email) {
-                errors.email = "email is required!";
+                errors.email = "Email is required!";
             }
             if (!values.password) {
-                errors.password = "This is required!";
+                errors.password = "Password is required!";
             }
             return errors;
         }
         return (
             <div className="login">
                 <NavbarWel />
-                <form onSubmit={onSubmitForm}>
+                <form onSubmit={onSubmitForm} className='form-reg'>
                     <h1>Register</h1>
                     <div className="form-outline mb-4">
                         <label>First name</label>
@@ -188,7 +188,7 @@ const Register = () => {
                     {/* Same as */}
                     <ToastContainer />
                     <p className="forgot-password text-right">Already registered?
-                        <Link to="/login">Login</Link></p>
+                        <Link to="/login" className="log">Login</Link></p>
                 </form>
 
             </div>

@@ -89,7 +89,7 @@ const ViewMissing = ({ report }) => {
                             </Row>
                             <div className="headers"><FaCalendarAlt className="icons" />Details on his/her disappearance:</div>
                             <Row>
-                                <Col className="colSm">Missing since: <span className="space">{finalDate(report.seenwhen)}</span></Col>
+                                <Col className="colSm">Missing since: <span className="space">{ format(new Date(report.seenwhen), 'MMMM dd, yyyy')}</span></Col>
                                 <Col className="colSm">Missing from: <span className="space">{report.seenwhere}</span></Col>
                             </Row>
                             <div className="headers"><FaMapMarkerAlt className="icons" />Address of missing person:</div>
@@ -116,7 +116,7 @@ const ViewMissing = ({ report }) => {
                                 <h1>{report.given_name} {report.surname}</h1>
                             </Row>
                             <Row>
-                                <Card.Img variant="top" src={require(`../../../Images/${report.image}`)} style={{ height: '450px' }} />
+                                <Card.Img variant="top" src={require(`../../../Images/${report.image}`)} style={{ height: '450px'}} />
                             </Row>
                         </Col>
                     </Row>

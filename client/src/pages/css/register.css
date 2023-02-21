@@ -5,7 +5,7 @@
   font-family: "Fira Sans", sans-serif;
 }
 
-Form {
+.form-reg {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -13,13 +13,13 @@ Form {
   padding-bottom: 1rem;
   border: 2px solid rgb(205, 210, 223);
   background-color: rgb(176, 200, 223);
-  height: 650px;
+  height: 680px !important;
   width: 480px;
   margin-left: 55%;
   box-shadow: 1px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 h1{
@@ -41,4 +41,13 @@ h1{
   background-image: url('https://www.cohenmedical.com/wp-content/uploads/2020/01/sad-seasonal-depression-1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+.log{
+  text-decoration: underline;
+  color:rgb(91, 4, 66) !important;
+  font-size: 20px !important;
+  margin-left: 5px !important;
+}
+.log:hover{
+  font-weight: 700;
 }

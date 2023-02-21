@@ -1,20 +1,30 @@
 import Navbar from "../components/navbar";
 import "./css/home.css"
 import { useNavigate } from "react-router-dom";
+import NavbarWel from "../components/navbarWel";
+import SidebarUser from "../components/sideUsers";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const Home = ({setAuth}) => {
+const Home = ({ setAuth }) => {
 
+  console.log(localStorage.getItem('token'))
   const navigate = useNavigate();
   const routeChange = () => {
-  let path = '/form-report'
-  navigate(path)
+    let path = '/form-report'
+    navigate(path)
   }
-    return (
-        <>
-          <Navbar/>
-          <section className='homepage' style={{height:`100vh`, backgroundRepeat: 'no-repeat', width:`100%`,
-                backgroundImage: `url("https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-male-silhouette-wandering-back-and-forth-melancholy-and-sad-image_786503.jpg")`,
-                backgroundSize:`cover`}}>
+  return (
+    <>
+      <NavbarWel />
+      <div className='homepage' style={{
+        height: `100vh`, backgroundRepeat: 'no-repeat', width: `100%`,
+        backgroundImage: `url("https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-male-silhouette-wandering-back-and-forth-melancholy-and-sad-image_786503.jpg")`,
+        backgroundSize: `cover`
+      }}>
+        <Row>
+          <Col sm={3}> <SidebarUser /></Col>
+          <Col sm={9} className="rightSide">
             <div className="header">
               <h1>We Never Stop Caring</h1>
             </div>
@@ -24,14 +34,17 @@ const Home = ({setAuth}) => {
               </p>
             </div>
             <div className="lost">
-                <h5>Do you know someone who's missing?</h5>
+              <h5>Do you know someone who's missing?</h5>
             </div>
             <div>
-              <button type="button" className="buttonform" onClick={ routeChange } >Report Someone Missing</button>
+              <button type="button" className="buttonform" onClick={routeChange} >Report Someone Missing</button>
             </div>
-          </section>
-        </>
-      )
+          </Col>
+        </Row>
+      </div>
+
+    </>
+  )
 }
 
 export default Home;

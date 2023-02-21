@@ -13,8 +13,7 @@ import "./Sidebar.css"
 
 
 const Sidebar = ({children}) => {
-    const[isOpen ,setIsOpen] = useState(false);
-    const toggle = () => setIsOpen (!isOpen);
+   
     const menuItem=[
         {
             path:"/admin",
@@ -49,18 +48,15 @@ const Sidebar = ({children}) => {
     ]
     return (
         
-           <div style={{width: isOpen ? "250px" : "50px"}} className="sidebar">
+           <div className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Missing People</h1>
-                   <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
-                       <FaBars onClick={toggle}/>
-                   </div>
+                   <h1  className="logo">Bataan's Missing Person</h1>
                </div>
                {
                    menuItem.map((item, index)=>(
                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
                            <div className="icon">{item.icon}</div>
-                           <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
+                           <div  className="link_text">{item.name}</div>
                        </NavLink>
                    ))
                }

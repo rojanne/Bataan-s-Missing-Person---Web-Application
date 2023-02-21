@@ -8,9 +8,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 10vh;
+    height: 8vh;
     box-shadow: rgba(50, 50, 93, 0.23) 0px 30px 30px -20px;
-    background-color: rgb(120, 162, 204);
+    background-color: rgb(14, 40, 59);
   
     /*box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
   }
@@ -18,7 +18,7 @@
   .logo {
     padding-top: 0;
     width: 250px;
-    height:9vh;
+    height:8vh;
     margin-top: 2px;
     margin-left: 0px;
   }
