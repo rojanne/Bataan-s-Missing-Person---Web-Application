@@ -5,6 +5,7 @@ import NavbarWel from "../components/navbarWel";
 import SidebarUser from "../components/sideUsers";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Footer from "../components/footer";
 
 const Home = ({ setAuth }) => {
 
@@ -25,6 +26,7 @@ const Home = ({ setAuth }) => {
         <Row>
           <Col sm={3}> <SidebarUser /></Col>
           <Col sm={9} className="rightSide">
+            <Row>
             <div className="header">
               <h1>We Never Stop Caring</h1>
             </div>
@@ -39,6 +41,10 @@ const Home = ({ setAuth }) => {
             <div>
               <button type="button" className="buttonform" onClick={routeChange} >Report Someone Missing</button>
             </div>
+            </Row>
+           
+              <Footer/>
+           
           </Col>
         </Row>
       </div>

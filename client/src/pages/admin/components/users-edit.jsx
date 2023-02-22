@@ -55,8 +55,8 @@ const UserEdit = ({ user }) => {
             >
                 <div className="modal-dialog">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="modal-title">{user.first_name} {user.last_name}</h4>
+                        <div className="modal-header" style={{backgroundColor: 'rgb(65, 94, 114)'}}>
+                            <h4 className="modal-title" style={{color: 'white'}}>{user.first_name} {user.last_name}</h4>
                             <button
                                 type="button"
                                 className="close"

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { format } from 'date-fns'
@@ -69,13 +68,13 @@ const SoloReport = ({ report }) => {
                 View
             </Button>
             <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-                <Modal.Header closeButton style={{backgroundColor: 'rgb(120, 162, 204)'}}>
-                    <Modal.Title style={{fontSize: '28px', fontWeight: '700'}}>Missing Person Report</Modal.Title>
+                <Modal.Header closeButton style={{backgroundColor: 'rgb(14, 40, 59)'}}>
+                    <Modal.Title style={{fontSize: '28px', fontWeight: '700', color: 'antiquewhite', marginLeft: '5%'}}>Missing Person Report</Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ backgroundColor: 'rgb(211, 211, 211)'}}>
-                    <div className="Solo">
+                <Modal.Body style={{ backgroundColor: 'rgb(225, 225, 225)'}}>
+                    <div className="Solo" >
                         <Row className="bigRow">
-                            <Col sm={8} className="colBig">
+                            <Col sm={8} className="colBig" >
                                 <div className="headers"><FaUserAlt className="icons" />Missing Person's Details:</div>
                                 <Row>
                                     <Col className="colSm">Name:<br></br> <span className="space">{report.given_name} {report.surname}</span></Col>
@@ -122,7 +121,7 @@ const SoloReport = ({ report }) => {
                                     <Col className="reporter">Reported by: {report.first_name} {report.last_name}</Col>
                                 </Row>
                                 <Row>
-                                    <Col><SeenEdit report={report} /></Col>
+                                    <Col className="buttonsss"><SeenEdit report={report} /></Col>
                                     <Col><FoundEdit report={report} /></Col>
                                 </Row>
                             </Col>

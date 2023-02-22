@@ -15,7 +15,7 @@ const FoundEdit = ({ report }) => {
     const handleShow = () => setShow(true);
 
     const [inputs, setInputs] = useState({
-        reportid: "", seenwhen: "", seenwhere: ""
+        reporterid: "", seenwhen: "", seenwhere: ""
     });
     const user_id = localStorage.getItem("userID")
 
@@ -48,7 +48,7 @@ const FoundEdit = ({ report }) => {
             } catch (err) {
                 console.error(err.message);
             }
-            toast.info('Report submitted successfully!', {
+            toast.success('Report submitted successfully!', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -56,10 +56,12 @@ const FoundEdit = ({ report }) => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "colored",
+                theme: "light",
             });
+            setInputs({seenwhen: "", seenwhere: ""})
+            window.location.reload()
         } else {
-            toast.warn(`Oooops, sorry. You can't report this. Only the one who made the missing report can make the found report. Thank you!`, {
+            toast.warn(`Oooops, sorry. You can't report this. Only the one who made the missing report can submit this. Thank you!`, {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -79,8 +81,8 @@ const FoundEdit = ({ report }) => {
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Please provide the details:</Modal.Title>
+                <Modal.Header closeButton style={{backgroundColor: 'rgb(65, 94, 114)'}}>
+                    <Modal.Title style={{color: 'white'}}>Please provide the details:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form className="formFound">

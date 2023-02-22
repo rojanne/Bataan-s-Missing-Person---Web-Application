@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { format } from 'date-fns'
 
 
-const ViewSighted = ({report}) => {
+const ViewSighted = ({ report }) => {
     const [lgShow, setLgShow] = useState(false);
     const [updatesighted, setUpdatesighted] = useState([])
 
@@ -41,38 +41,40 @@ const ViewSighted = ({report}) => {
                 show={lgShow}
                 onHide={() => setLgShow(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
-                style={{marginTop: '10%'}}
+                style={{ marginTop: '10%' }}
             >
-                <Modal.Header closeButton style={{backgroundColor: 'rgba(120, 162, 204)'}}>
-                    <Modal.Title id="example-modal-sizes-title-lg" style={{fontWeight: '700'}} >
+                <Modal.Header closeButton style={{ backgroundColor: 'rgb(65, 94, 114)' }}>
+                    <Modal.Title id="example-modal-sizes-title-lg" style={{ fontWeight: '700', color: 'white' }} >
                         Sighted History of {report.given_name} {report.surname}
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body >
-                <Table striped bordered hover style={{backgroundColor: "whitesmoke"}}>
-                <thead> 
-                    <tr>
-                        <th>Seen When</th>
-                        <th>Time of day</th>
-                        <th>Seen Where</th>
-                        <th>Description</th>
-                        <th>Reported by</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {updatesighted.map(update => (
-                         <tr key={update.reportid}>
-                         <td>{ format(new Date(update.lastwhen), 'MMMM dd, yyyy')}</td>
-                         <td>{update.timeday}</td>
-                         <td>{update.lastwhere}</td>
-                         <td>{update.description}</td>
-                         <td>{update.first_name} {update.last_name}</td>
-                     </tr>
-                    ))}                  
-                </tbody>
-            </Table>
+                <Modal.Body style={{ backgroundColor: 'rgb(225, 225, 225)' }}>
+                    <div style={{ border: '1px solid white', padding: '1px 1px', borderRadius: '10px', boxShadow: '10px 10px 5px grey', backgroundColor: 'whitesmoke' }}>
+                        <Table striped hover style={{ backgroundColor: "whitesmoke" }}>
+                            <thead style={{ backgroundColor: 'rgb(65, 94, 114)' }}>
+                                <tr style={{ color: 'aliceblue' }}>
+                                    <th>Seen When</th>
+                                    <th>Time of day</th>
+                                    <th>Seen Where</th>
+                                    <th>Description</th>
+                                    <th>Reported by</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {updatesighted.map(update => (
+                                    <tr key={update.reportid}>
+                                        <td>{format(new Date(update.lastwhen), 'MMMM dd, yyyy')}</td>
+                                        <td>{update.timeday}</td>
+                                        <td>{update.lastwhere}</td>
+                                        <td>{update.description}</td>
+                                        <td>{update.first_name} {update.last_name}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    </div>
                 </Modal.Body>
-            </Modal>   
+            </Modal>
         </div>
     );
 

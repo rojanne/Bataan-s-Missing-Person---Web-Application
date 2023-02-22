@@ -40,7 +40,7 @@ const AdminDashboard = () => {
     return (
         <div>
             <NavbarWel />
-            <Row>
+            <Row style={{overflow: 'hidden'}}>
                 <Col sm={3}> <Sidebar /></Col>
                 <Col sm={9} className="rightBar">
                     <Row className="botBar">

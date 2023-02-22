@@ -15,6 +15,9 @@
     background-color:rgb(201, 222, 240);
     height: 100vh;
     margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: -5%;
 }
 .botBar{
     margin-top: 50px;

@@ -6,8 +6,8 @@
     border: 2px solid rgb(0, 70, 111);
     background-color: rgb(201, 222, 240);
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 25px;
-
+    
+    box-shadow: 15px 15px 10px grey
 }
 .table {
    

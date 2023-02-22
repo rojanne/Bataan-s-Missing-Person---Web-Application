@@ -52,7 +52,7 @@ const Missing = () => {
                     <div className="cardHolder">
                         {reports.map(report => (
                             <Card classname="card" style={{ width: '20rem', marginBottom: '30px', borderRadius: '5%' }}>
-                                <Card.Img variant="top" src={require(`../Images/${report.image}`)} style={{ height: '300px', padding: '5px 5px', borderRadius: '5%' }} />
+                                <Card.Img variant="top" src={require(`../Images/${report.image}`)} style={{ height: '300px', padding: '7px 10px', borderRadius: '5%' }} />
                                 <Card.Body style={{ height: '120px' }}>
                                     <Card.Title style={{ textAlign: 'center', marginTop: '5px' }}><span className="span" style={{ fontSize: '24px', fontWeight: '700' }}>{report.given_name} {report.surname}</span></Card.Title>
 

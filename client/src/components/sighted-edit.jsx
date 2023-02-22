@@ -43,7 +43,7 @@ const SeenEdit = ({report}) => {
         } catch (err) {
             console.error(err.message);
         }
-        toast.info('Report submitted successfully!', {
+        toast.success('Report submitted successfully!', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -51,7 +51,7 @@ const SeenEdit = ({report}) => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "colored",
+            theme: "light",
             });
         setInputs({reportid: "", timeday: "", lastwhen: "", lastwhere: "", description: "", reporterid: ""})
     }
@@ -65,12 +65,12 @@ const SeenEdit = ({report}) => {
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Please provide the details:</Modal.Title>
+                <Modal.Header closeButton style={{backgroundColor: 'rgb(65, 94, 114)'}}>
+                    <Modal.Title style={{color: 'white'}}>Please provide the details:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form className="formEdit">
-                        <div>Please provide honest information.</div>
+                        
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>When did you see them?</Form.Label>
                             <Form.Control

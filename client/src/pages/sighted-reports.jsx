@@ -45,7 +45,7 @@ const Sighted = () => {
                 <Col sm={3}> <SidebarUser /></Col>
                 <Col sm={9} className="right">
                     <div className="MissingHeader">
-                        <h1>Missing People who have been sighted but still not found.</h1>
+                        <h1>Missing People who have been sighted but still not found:</h1>
                     </div>
                     <div className="cardHolder">
                         {reports.map(report => (

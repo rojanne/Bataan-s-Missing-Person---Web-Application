@@ -56,12 +56,12 @@ const ViewMissing = ({ report }) => {
                 onHide={() => setLgShow(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
-                <Modal.Header closeButton style={{ backgroundColor: 'rgba(120, 162, 204)' }}>
-                    <Modal.Title id="example-modal-sizes-title-lg" style={{ fontWeight: '600' }} >
+                <Modal.Header closeButton style={{backgroundColor: 'rgb(65, 94, 114)'}}>
+                    <Modal.Title id="example-modal-sizes-title-lg" style={{ fontWeight: '600', color: 'white' }} >
                         Missing Report
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body >
+                <Modal.Body style={{ backgroundColor: 'rgb(225, 225, 225)'}} >
                     <Row className="bigRow" style={{width: '95%', marginLeft: '30px'}}>
                         <Col sm={8} className="colBig">
                             <div className="headers"><FaUserAlt className="icons" />Personal Details:</div>

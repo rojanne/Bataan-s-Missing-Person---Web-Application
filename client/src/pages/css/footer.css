@@ -1,0 +1,27 @@
+.mainFooter{
+    background-color: rgb(14, 40, 59);
+    margin-top: 20%;
+    margin-left: -12%;
+    width: 112% !important;
+    overflow: hidden;
+    padding: 3% ;
+}
+.foot{
+    text-align: center; 
+}
+.foot h5{
+    color: aliceblue;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.acts{
+    font-size: 16px;
+}
+.icon{
+    margin-right: 20px;
+}
+.copy{
+    font-size: 14px;
+    margin-top: 20px;
+    color: antiquewhite;
+}

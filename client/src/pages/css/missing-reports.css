@@ -1,10 +1,7 @@
 .missingAll {
-    /* background-image: url('https://cdn.pixabay.com/photo/2021/01/14/19/30/water-5917708__340.jpg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
     width: 100%;
     height:fit-content;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(225, 225, 225);
 }
 
 .cardHolder {
@@ -17,5 +14,8 @@
 .MissingHeader h1{
     text-align: left;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
+    font-size: 34px;
+    font-weight: 700;
+    text-shadow: 2px 2px rgb(120, 168, 223);
 }
